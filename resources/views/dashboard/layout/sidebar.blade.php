@@ -331,9 +331,9 @@
             </li>
 
             <li>
-                <a class="sidebar-header" href="login.html">
+                <a class="sidebar-header" href="{{url('logout')}}">
                     <i data-feather="log-in"></i>
-                    <span>Login</span>
+                    <span>logout</span>
                 </a>
             </li>
         </ul>
