@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboard\indexController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,19 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function(){
-    return view('welcome');
-});
 
+// prefix is "dashboard"
 
-Route::middleware('auth')->group(function(){
-
-    Route::get('/adminpage', function () {
-        return view('dashboard.index');
-    })->name('index');
-
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [indexController::class,'index'])->name('admin');
