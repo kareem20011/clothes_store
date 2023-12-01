@@ -40,9 +40,13 @@ class LoginController extends Controller
 
     public function redirectTo(){
         if (auth()->user()->type == 1) {
-            return redirect()->route('index');
-        }else{
-            dd('user');
+
+            return 'http://127.0.0.1:8000/dashboard/admin';
+
+        }elseif(auth()->user()->type == 0){
+
+            return 'http://127.0.0.1:8000/';
+
         }
     }
 }
