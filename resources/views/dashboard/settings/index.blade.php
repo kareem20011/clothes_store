@@ -2,7 +2,7 @@
 
 @section('body')
 
-<form action="{{route('dashboard.settings.update')}}" method="post" enctype="multipart/form-data">
+<form action="{{route('dashboard.settings.update', $setting->id)}}" method="post" enctype="multipart/form-data">
 
 @csrf
 @method('PUT')
@@ -17,24 +17,27 @@
     </div>
 @endif
 
+@if(session()->has('success'))
+<div class="alert alert-info">{{session()->get('success')}}</div>
+@endif
 <!-- Name -->
 <div class="mb-3">
-  <input name="name" type="text" class="form-control" placeholder="Name">
+  <input name="name" type="text" class="form-control" placeholder="Name" value="{{$setting->name}}">
 </div>
 
 <!-- description -->
 <div class="mb-3">
-  <input name="description" type="text" class="form-control" placeholder="Description">
+  <input name="description" type="text" class="form-control" placeholder="Description" value="{{$setting->description}}">
 </div>
 
 <!-- email -->
 <div class="mb-3">
-  <input name="email" type="email" class="form-control" placeholder="Email">
+  <input name="email" type="email" class="form-control" placeholder="Email" value="{{$setting->email}}">
 </div>
 
 <!-- phone -->
 <div class="mb-3">
-  <input name="phone" type="number" class="form-control" placeholder="Phone">
+  <input name="phone" type="number" class="form-control" placeholder="Phone" value="{{$setting->phone}}">
 </div>
 
 <!-- address -->
@@ -44,27 +47,27 @@
 
 <!-- facebook -->
 <div class="mb-3">
-    <input name="facebook" type="text" class="form-control" placeholder="Facebook link">
+    <input name="facebook" type="text" class="form-control" placeholder="Facebook link" value="{{$setting->facebook}}">
 </div>
 
 <!-- instagram -->
 <div class="mb-3">
-    <input name="instagram" type="text" class="form-control" placeholder="Instagram link">
+    <input name="instagram" type="text" class="form-control" placeholder="Instagram link" value="{{$setting->instagram}}">
 </div>
 
 <!-- twitter -->
 <div class="mb-3">
-    <input name="twitter" type="text" class="form-control" placeholder="Twitter link">
+    <input name="twitter" type="text" class="form-control" placeholder="Twitter link" value="{{$setting->twitter}}">
 </div>
 
 <!-- youtube -->
 <div class="mb-3">
-    <input name="youtube" type="text" class="form-control" placeholder="Youtube link">
+    <input name="youtube" type="text" class="form-control" placeholder="Youtube link" value="{{$setting->youtube}}">
 </div>
 
 <!-- tiktok -->
 <div class="mb-3">
-    <input name="tiktok" type="text" class="form-control" placeholder="Tiktok link">
+    <input name="tiktok" type="text" class="form-control" placeholder="Tiktok link" value="{{$setting->tiktok}}">
 </div>
 
 <!-- add logo -->

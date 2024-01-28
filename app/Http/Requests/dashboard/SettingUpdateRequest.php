@@ -26,10 +26,10 @@ class SettingUpdateRequest extends FormRequest
         return [
             'name'=>'string|nullable',
             'description'=>'string|nullable',
-            'logo'=>'image|nullable',
-            'favicon'=>'image|nullable',
+            'logo'=>'mimes:png,jpg,jpeg|max:2048|nullable',
+            'favicon'=>'mimes:png,jpg,jpeg,webp|max:2048|nullable',
             'email'=>'email|nullable',
-            'phone'=>'numeric|max:12|nullable',
+            'phone'=>'numeric|nullable',
             'address'=>'string|nullable',
             'facebook'=>'string|nullable',
             'instagram'=>'string|nullable',

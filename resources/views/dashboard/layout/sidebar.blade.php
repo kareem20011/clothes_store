@@ -2,7 +2,7 @@
  <div class="page-sidebar">
     <div class="main-header-left d-none d-lg-block">
         <div class="logo-wrapper">
-            <a href="index.html">
+            <a href="{{route('admin')}}">
                 <img class="d-none d-lg-block blur-up lazyloaded"
                     src="assets/images/dashboard/multikart-logo.png" alt="">
             </a>
@@ -312,7 +312,7 @@
                         class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="profile.html"><i class="fa fa-circle"></i>Profile
+                        <a href="{{route('dashboard.setting.index')}}"><i class="fa fa-circle"></i>Profile
                         </a>
                     </li>
                 </ul>
